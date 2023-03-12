@@ -18,10 +18,8 @@ const lightbox = document.querySelector('.lightbox')
 const lightboxBtn = document.querySelector('.lightbox__btn')
 const lightboxImg = document.querySelector('.lightbox__img')
 
-const skillsH2 = document.querySelectorAll('.skills__h2')
-const skillsLista = document.querySelectorAll('.skills__lista')
 
-/* Una función que alterna la clase active en los elementos de superposición y encabezado. */
+/* Una función que alterna la clase active en los elementos overlay y header. */
 const headerMenuHandler = ()=>{
     overlay.classList.toggle('active')
     header.classList.toggle('active')
@@ -30,16 +28,6 @@ const headerMenuHandler = ()=>{
 /* Eliminando la clase active del elemento lightbox. */
 const lightboxBtnHandler = ()=>{
     lightbox.classList.remove('active')
-}
-
-/**
- * Para cada botón de la matriz de botones, elimine la clase 'active' del botón y de la imagen.
- */
-const proyectosRemoveHandler = ()=>{
-    proyectosBtn.forEach((eachBtn , j)=>{
-        proyectosBtn[j].classList.remove('active')
-        proyectosImg[j].classList.remove('active')
-    })
 }
 
 
@@ -57,16 +45,22 @@ active de todos los botones e imágenes, luego agrega la clase active al botón 
 está desplazando. Cuando el mouse ya no está sobre el botón, elimina la clase active de todos los
 botones e imágenes. */
 
-
 proyectosBtn.forEach(( eachBtn, i )=>{
     proyectosBtn[i].addEventListener('mouseover', ()=>{
-        proyectosRemoveHandler()
-
+        proyectosBtn.forEach((eachBtn , j)=>{
+            proyectosBtn[j].classList.remove('active')
+            proyectosImg[j].classList.remove('active')
+        })
         proyectosBtn[i].classList.add('active')
         proyectosImg[i].classList.add('active')
     })
-    proyectosBtn[i].addEventListener('mouseout', proyectosRemoveHandler())
-        
+    proyectosBtn[i].addEventListener('mouseout', ()=>{
+        proyectosBtn.forEach((eachLi , j)=>{
+            proyectosBtn[j].classList.remove('active')
+            proyectosImg[j].classList.remove('active')
+
+        })
+    })
 })
 
 
@@ -76,19 +70,17 @@ proyectosBtn.forEach(( eachBtn, i )=>{
 imagen, se muestra el lightbox y la fuente de la imagen se establece en la imagen en la que se
 hizo clic. */
 
-trabajosImgs.forEach( (eachImgs , i)=>{
-    trabajosImgs[i].addEventListener('click', ()=>{
+trabajosImgs.forEach(( eachtrabajosImgs , i)=>{
+    trabajosImgs[i].addEventListener('click',()=>{
         lightbox.classList.add('active')
 
-        let ruta = trabajosImgs[i].scr
+        let ruta = trabajosImgs[i].src
+        console.log(ruta)
         lightboxImg.src = ruta
     })
 })
 
-/* Agregar un detector de eventos al elemento lightboxBtn. Cuando se hace clic en lightboxBtn, se llama
-a la función lightboxBtnHandler. */
-
-// lightboxBtn.addEventListener('click' , lightboxBtnHandler)
+lightboxBtn.addEventListener('click' , lightboxBtnHandler)
 
 
 // ACORDEÓN PROYECTOS
@@ -106,15 +98,6 @@ trabajosBtn.forEach( (eachBtn , i )=>{
 })
 
 
-// ACORDEÓN SKILLS
 
-skillsH2.forEach( ( eachBtn , i )=>{
-    skillsH2[i].addEventListener('click', ()=>{
-        skillsLista.forEach(( eachBtn , j)=>
-            skillsLista[j].classList.remove('active'))
-        skillsLista[i].classList.toggle('active')
-    })
-    
-})
 
 
