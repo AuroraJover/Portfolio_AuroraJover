@@ -2,11 +2,12 @@
 
 /* Seleccionando los elementos del DOM. */
 const header = document.querySelector('.header')
-const headerMenu = document.querySelector('.header__menu')
+const headerMenu = header.querySelector('.header__menu')
 const overlay = document.querySelector('.overlay')
 
-const skillsH2 = document.querySelectorAll('.skills__h2')
-const skillsLista = document.querySelectorAll('.skills__lista')
+const skills = document.querySelector('.skills')
+const skillsH2 = skills.querySelectorAll('.skills__h2')
+const skillsLista = skills.querySelectorAll('.skills__lista')
 
 /* Una función que alterna la clase active en los elementos overlay y header. */
 const headerMenuHandler = ()=>{
