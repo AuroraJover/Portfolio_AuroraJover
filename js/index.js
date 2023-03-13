@@ -9,7 +9,7 @@ const proyectos = document.querySelector('.proyectos')
 const proyectosBtn = proyectos.querySelectorAll('.proyectos__btn')
 const proyectosImg = proyectos.querySelectorAll('.proyectos__img')
 
-
+const cursor = document.querySelector('.cursor')
 
 
 /* Una función que alterna la clase active en los elementos overlay y header. */
@@ -51,6 +51,16 @@ proyectosBtn.forEach(( eachBtn, i )=>{
     })
 })
 
+
+// CURSOR
+
+/* Obtener el ancho y la altura del cursor y luego establecer la propiedad de transform del cursor
+en las coordenadas x e y del mouse. */
+const {width , height} = cursor.getBoundingClientRect(cursor)
+
+window.addEventListener('mousemove' , ( {x , y} )=>{
+    cursor.style.transform = `translateX(${ x - ( width / 2 ) }px) translateY(${ y - (height / 2) }px)`
+})
 
 
 

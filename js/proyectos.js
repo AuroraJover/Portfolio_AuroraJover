@@ -14,6 +14,8 @@ const lightbox = document.querySelector('.lightbox')
 const lightboxBtn = lightbox.querySelector('.lightbox__btn')
 const lightboxImg = lightbox.querySelector('.lightbox__img')
 
+const cursor = document.querySelector('.cursor')
+
 
 /* Una función que alterna la clase active en los elementos overlay y header. */
 const headerMenuHandler = ()=>{
@@ -64,4 +66,15 @@ trabajosBtn.forEach( (eachBtn , i )=>{
             trabajosContainer[j].classList.remove('active'))
         trabajosContainer[i].classList.add('active')
     })  
+})
+
+
+// CURSOR
+
+/* Obtener el ancho y la altura del cursor y luego establecer la propiedad de transform del cursor
+en las coordenadas x e y del mouse. */
+const {width , height} = cursor.getBoundingClientRect(cursor)
+
+window.addEventListener('mousemove' , ( {x , y} )=>{
+    cursor.style.transform = `translateX(${ x - ( width / 2 ) }px) translateY(${ y - (height / 2) }px)`
 })

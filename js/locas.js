@@ -1,13 +1,7 @@
-'use strict'
-
 /* Seleccionando los elementos del DOM. */
 const header = document.querySelector('.header')
 const headerMenu = header.querySelector('.header__menu')
 const overlay = document.querySelector('.overlay')
-
-const skills = document.querySelector('.skills')
-const skillsH2 = skills.querySelectorAll('.skills__h2')
-const skillsLista = skills.querySelectorAll('.skills__lista')
 
 const cursor = document.querySelector('.cursor')
 
@@ -24,16 +18,6 @@ const headerMenuHandler = ()=>{
 
 headerMenu.addEventListener('click', headerMenuHandler)
 
-// ACORDEÓN SKILLS
-
-skillsH2.forEach( ( eachBtn , i )=>{
-    skillsH2[i].addEventListener('click', ()=>{
-        skillsLista.forEach(( eachBtn , j)=>
-            skillsLista[j].classList.remove('active'))
-        skillsLista[i].classList.add('active')
-    })
-    
-})
 
 // CURSOR
 

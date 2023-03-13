@@ -160,6 +160,7 @@ body {
   font-size: 100%;
   font-family: var(--tipo-principal);
   color: var(--negro);
+  cursor: none;
   /* (Opcional) */
   -webkit-hyphens: auto;
           hyphens: auto;
@@ -169,6 +170,19 @@ body {
   -webkit-font-smoothing: antialiased;
   /* (Opcional) */
   -moz-osx-font-smoothing: grayscale;
+}
+
+.cursor {
+  width: 32px;
+  height: 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--verde);
+  border-radius: 50%;
+  z-index: 4;
+  pointer-events: none;
+  mix-blend-mode: difference;
 }
 
 .wrapper {

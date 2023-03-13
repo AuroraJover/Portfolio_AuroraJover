@@ -1,5 +1,18 @@
 @use '_reset';
 
+
+.cursor{
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--verde);
+    border-radius: 50%;
+    z-index: 4;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
 .wrapper{
     width: 90%;
     max-width: 1200px;
