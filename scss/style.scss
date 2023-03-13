@@ -560,6 +560,7 @@
     opacity: 0;
     pointer-events: none;
     transition: all .5s ease;
+    z-index: 2;
     &.active{
         opacity: 1;
         pointer-events: auto;
