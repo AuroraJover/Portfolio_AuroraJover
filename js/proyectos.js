@@ -75,11 +75,12 @@ trabajosBtn.forEach( (eachBtn , i )=>{
 
 /* Obtener el ancho y la altura del cursor y luego establecer la propiedad de transform del cursor
 en las coordenadas x e y del mouse. */
-const {width , height} = cursor.getBoundingClientRect(cursor)
+const { offsetWidth , offsetHeight } = cursor
 
 window.addEventListener('mousemove' , ( {x , y} )=>{
-    cursor.style.transform = `translateX(${ x - ( width / 2 ) }px) translateY(${ y - (height / 2) }px)`
+    cursor.style.transform = `translateX(${ x - ( offsetWidth / 2 ) }px) translateY(${ y - (offsetHeight / 2) }px )`
 })
+
 
 // CURSOR OVER LINKS
 links.forEach((eachLink)=> {
