@@ -10,6 +10,8 @@ const proyectosBtn = proyectos.querySelectorAll('.proyectos__btn')
 const proyectosImg = proyectos.querySelectorAll('.proyectos__img')
 
 const cursor = document.querySelector('.cursor')
+const links = document.querySelectorAll('a');
+const buttons = document.querySelectorAll('button');
 
 
 /* Una función que alterna la clase active en los elementos overlay y header. */
@@ -56,13 +58,31 @@ proyectosBtn.forEach(( eachBtn, i )=>{
 
 /* Obtener el ancho y la altura del cursor y luego establecer la propiedad de transform del cursor
 en las coordenadas x e y del mouse. */
-const {width , height} = cursor.getBoundingClientRect(cursor)
+
+
+const { offsetWidth , offsetHeight } = cursor
 
 window.addEventListener('mousemove' , ( {x , y} )=>{
-    cursor.style.transform = `translateX(${ x - ( width / 2 ) }px) translateY(${ y - (height / 2) }px)`
+    cursor.style.transform = `translateX(${ x - ( offsetWidth / 2 ) }px) translateY(${ y - (offsetHeight / 2) }px )`
 })
 
-
+// CURSOR OVER LINKS
+links.forEach((eachLink)=> {
+    eachLink.addEventListener('mouseover', ()=> {
+        cursor.classList.add('scale');
+    });
+    eachLink.addEventListener('mouseout', ()=> {
+        cursor.classList.remove('scale');
+    });
+});
+buttons.forEach( (eachLink)=> {
+    eachLink.addEventListener('mouseover', ()=> {
+        cursor.classList.add('scale');
+    });
+    eachLink.addEventListener('mouseout', ()=> {
+        cursor.classList.remove('scale');
+    });
+});
 
 
 

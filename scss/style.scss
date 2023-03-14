@@ -12,9 +12,16 @@
     z-index: 4;
     pointer-events: none;
     mix-blend-mode: difference;
+    
     @media (max-width: 600px){
         display: none;
     }
+    &.scale{
+        width: 60px;
+        height: 60px;
+
+    }
+
 }
 .wrapper{
     width: 90%;
@@ -141,7 +148,6 @@
         width: 2rem;
         height: 1.5rem;
         position: relative;
-        cursor: pointer;
     }
     &__linea{
         width: 100%;
@@ -415,7 +421,6 @@
     }
     &__boton{
         color: var(--verde);
-        cursor: pointer;
         position: relative;
         margin: 4rem 0;
 
@@ -470,7 +475,6 @@
         color: transparent;
         transition: all 0.5s ease;
         position: relative;
-        cursor: pointer;
         
         &::after {
             content: "";
@@ -535,7 +539,6 @@
         min-height: 15rem;
         transition: all .5s ease;
         object-fit: contain;
-        cursor: pointer;
         
         &:hover{
             transform: scale(.9);
@@ -571,7 +574,6 @@
         border-radius: 50%;
         margin: 0 0 0.5rem;
         transform: all .5s ease;
-        cursor: pointer;
         &:hover{
             transform: scale(0.9);
         }
@@ -699,7 +701,6 @@
         font-size: 3rem;
         margin: 2rem 0;
         position: relative;
-        cursor: pointer;
         
         &::after {
             content: "";
@@ -839,7 +840,6 @@
     }
     &__email{
         color: var(--verde);
-        cursor: pointer;
         position: relative;
         margin: 4rem 0;
         display: inline-block;
